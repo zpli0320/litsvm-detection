@@ -133,8 +133,17 @@ void        init_struct_model(SAMPLE sample, STRUCTMODEL *sm,
        feature space in sizePsi. This is the maximum number of different
        weights that can be learned. Later, the weight vector w will
        contain the learned weights for the model. */
+    int bw = 1000000;
+    int bh = 1000000;
+    EXAMPLE *ex = sample.examples;
+    for(int i = 0; i < sample.n; i++){
+        if(ex[i].x.pword->col_num < bw) bw = ex[i].x.pword->col_num;
+        if(ex[i].x.pword->row_num < bh) bh = ex[i].x.pword->row_num;
+    }
+    sm->bh = bh/2;
+    sm->bw = bw/2;
 
-    sm->sizePsi = 2000;
+    sm->sizePsi = bh*bw;
     sm->w = (double *) malloc(sizeof(double) * sm->sizePsi);
     memset(sm->w, 0, sizeof(double) * sm->sizePsi);
     sm->num_multilabel = 0;
@@ -175,11 +184,13 @@ LABEL       classify_struct_example(PATTERN x, STRUCTMODEL *model,
     double bestscore = -1000;
     int w = x.pword->col_num;
     int h = x.pword->row_num;
+    int bh = model->bh;
+    int bw = model->bw;
 
     double score;
     int *bbx = new int[2];
-    for(int hi = 1; hi + 100 <= h; hi+= 1){
-        for(int wi = 1; wi + 200 <= w; wi+=1){
+    for(int hi = 1; hi + bh <= h; hi+= 1){
+        for(int wi = 1; wi + bw <= w; wi+=1){
             bbx[0]=wi;
             bbx[1]=hi;
             DOC doc;
@@ -263,6 +274,9 @@ LABEL       find_most_violated_constraint_marginrescaling(PATTERN x, LABEL y,
 
     int w = x.pword->col_num;
     int h = x.pword->row_num;
+    int bh = model->bh;
+    int bw = model->bw;
+
     int first = 1;
     vector<int> bestbox;
     bestbox.push_back(1);
@@ -271,8 +285,8 @@ LABEL       find_most_violated_constraint_marginrescaling(PATTERN x, LABEL y,
 
     double score;
     int *bbx = new int[2];
-    for(int hi = 1; hi + 100 <= h; hi+= 10){
-        for(int wi = 1; wi + 200 <= w; wi+=10){
+    for(int hi = 1; hi + bh <= h; hi+= 10){
+        for(int wi = 1; wi + bw <= w; wi+=10){
             bbx[0]=wi;
             bbx[1]=hi;
             DOC doc;
@@ -329,17 +343,17 @@ SVECTOR     *psi(PATTERN x, LABEL L, STRUCTMODEL *model,
        inner vector product) and the appropriate function of the
        loss + margin/slack rescaling method. See that paper for details. */
     SVECTOR *fvec = new SVECTOR[1];
-    fvec->words = new WORD[model->num_features +1];
+    fvec->words = (WORD*)my_malloc(sizeof(WORD)*(model->sizePsi+1));
     int bx = L.y[0], by = L.y[1];
 
     WORD *words = fvec->words;
-    for(int i = 0; i< 2000; i++)
+    for(int i = 0; i< model->sizePsi; i++)
         words[i].wnum = i +1;
-    for(int i =0; i < 10; i++)
-        for(int j = 0; j < 200; j++)
-            words[i*200+j].weight = x.pword ->val[by+i*10][bx-1+j];
-    words[model->num_features].wnum = 0;
-    words[model->num_features].weight = 0.0;
+    for(int i =0; i < model->bh; i++)
+        for(int j = 0; j < model->bw; j++)
+            words[i*model->bw+j].weight = x.pword ->val[by+i][bx-1+j];
+    words[model->sizePsi].wnum = 0;
+    words[model->sizePsi].weight = 0.0;
 
     fvec->factor =1.0;
     fvec->next = NULL;
@@ -435,6 +449,8 @@ void        write_struct_model(char *file, STRUCTMODEL *sm,
     }
 
     fprintf(fl, "%ld # sizePsi\n", sm->sizePsi);
+    fprintf(fl, "%d # bw\n", sm->bw);
+    fprintf(fl, "%d # bh\n", sm->bh);
 
     for (long i = 0; i < sm->sizePsi; i++) {
         fprintf(fl, "%.8lf ", model->lin_weights[i]);
@@ -459,6 +475,8 @@ STRUCTMODEL read_struct_model(char *file, STRUCT_LEARN_PARM *sparm)
     char *line;
     double num;
     long i;
+    long bh;
+    long bw;
 
     MODEL *model=(MODEL*)malloc(sizeof(MODEL)*1);
     nol_ll(file,&max_docs, &max_words_doc, &ll);
@@ -470,6 +488,9 @@ STRUCTMODEL read_struct_model(char *file, STRUCT_LEARN_PARM *sparm)
         exit(1);
     }
     fscanf(fl,"%ld%*[^\n]\n",&sizePsi);
+    fscanf(fl,"%ld%*[^\n]\n",&bw);
+    fscanf(fl,"%ld%*[^\n]\n",&bh);
+
 
     sm.sizePsi = sizePsi;
 

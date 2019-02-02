@@ -82,6 +82,8 @@ typedef struct structmodel {
      added here, e.g. the grammar rules for NLP parsing */
   int num_multilabel;
   int num_features;
+  int bw;
+  int bh;
 } STRUCTMODEL;
 
 typedef struct struct_learn_parm {
