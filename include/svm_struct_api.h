@@ -95,5 +95,5 @@ template <typename Value> Value read_num(char* line, long &pos) {
 	while (line[pos] == ' ' || line[pos] == ':') pos++;
 	return number;
 }
-double iou(int *yt, int *ypre);
+double iou(int *yt, int *ypre, STRUCT_LEARN_PARM *sparm);
 #endif

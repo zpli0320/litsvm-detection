@@ -244,8 +244,8 @@ void svm_learn_struct(SAMPLE sample, STRUCT_LEARN_PARM *sparm,
 			          -(classify_example(svmModel,cset.lhs[j])
 				    -sm->w[sizePsi+i]/(sqrt(2*svmCnorm))));
 		else
-		  slack=MAX(slack,
-			   cset.rhs[j]-classify_example(svmModel,cset.lhs[j]));
+            slack = MAX(slack,
+                        cset.rhs[j] - classify_example(svmModel, cset.lhs[j]));
 	      }
 	    
 	    /**** if `error' add constraint and recompute ****/
