@@ -2,9 +2,9 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="svmlabel" targetName="svmlabel_lib" />
-      <config projectName="svmlabel" targetName="svm-label-train" />
       <config projectName="svmlabel" targetName="svm-label-predict" />
+      <config projectName="svmlabel" targetName="svm-label-train" />
+      <config projectName="svmlabel" targetName="svmlabel_lib" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -15,10 +15,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c3cae3ea-5e9d-42c3-aa6a-99b151aca87f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/svm_struct_api.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/svm_struct_api.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/svm_struct_api_types.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/svm_struct_api_types.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svm_struct_api.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/svm_struct_api.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svm_struct_learn.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/svm_struct_learn.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,11 +27,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/svm_struct_learn.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1117">
-              <caret line="254" selection-start-line="254" selection-end-line="254" />
+            <state relative-caret-position="-217">
+              <caret line="238" column="16" selection-start-line="238" selection-start-column="16" selection-end-line="238" selection-end-column="16" />
               <folding>
                 <element signature="e#1408#1437#0" expanded="true" />
               </folding>
@@ -45,12 +42,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/svm_struct_api.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="416" column="18" lean-forward="true" selection-start-line="416" selection-start-column="18" selection-end-line="416" selection-end-column="18" />
+            <state relative-caret-position="288">
+              <caret line="196" column="22" selection-start-line="196" selection-start-column="22" selection-end-line="196" selection-end-column="22" />
               <folding>
                 <element signature="e#1334#1352#0" expanded="true" />
-                <element signature="e#11323#12679#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="16" column="32" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -60,15 +65,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="369">
               <caret line="67" column="33" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/include/c++/4.8.2/bits/stl_vector.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="770" selection-start-line="770" selection-end-line="770" />
             </state>
           </provider>
         </entry>
@@ -95,15 +91,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="179">
               <caret line="87" selection-start-line="87" selection-end-line="87" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/src/debug/glibc-2.17-c758a686/csu/libc-start.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="273" selection-start-line="273" selection-end-line="273" />
             </state>
           </provider>
         </entry>
@@ -137,6 +124,7 @@
         <option value="$PROJECT_DIR$/include/svm_struct_api.h" />
         <option value="$PROJECT_DIR$/src/svm_struct_learn.cpp" />
         <option value="$PROJECT_DIR$/src/svm_struct_api.cpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
       </list>
     </option>
   </component>
@@ -158,6 +146,11 @@
             <path>
               <item name="svmlabel" type="b2602c69:ProjectViewProjectNode" />
               <item name="litsvm-detection" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="svmlabel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="litsvm-detection" type="462c0819:PsiDirectoryNode" />
+              <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="svmlabel" type="b2602c69:ProjectViewProjectNode" />
@@ -206,7 +199,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.svm-label-predict">
+  <component name="RunManager" selected="Application.svm-label-train">
     <configuration name="svm-label-predict" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../dataset/cowdata ../model/cow_data_c_10" PASS_PARENT_ENVS_2="true" PROJECT_NAME="svmlabel" TARGET_NAME="svm-label-predict" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="svmlabel" RUN_TARGET_NAME="svm-label-predict">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -246,10 +239,18 @@
       <workItem from="1549334138531" duration="10484000" />
       <workItem from="1549519185104" duration="29435000" />
     </task>
+    <task id="LOCAL-00001" summary="fix bug when psi_detect">
+      <created>1549797066574</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1549797066574</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63055000" />
+    <option name="totallyTimeSpent" value="72834000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -262,14 +263,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1017" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2657082" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2657082" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946752" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49893504" visible="true" weight="0.3618635" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49893504" visible="true" weight="0.3618635" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
@@ -327,6 +329,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix bug when psi_detect" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bug when psi_detect" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -427,13 +433,6 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main.cpp" />
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/svm_learn.h">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -566,22 +565,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/svm_struct_api.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="416" column="18" lean-forward="true" selection-start-line="416" selection-start-column="18" selection-end-line="416" selection-end-column="18" />
+        <state relative-caret-position="288">
+          <caret line="196" column="22" selection-start-line="196" selection-start-column="22" selection-end-line="196" selection-end-column="22" />
           <folding>
             <element signature="e#1334#1352#0" expanded="true" />
-            <element signature="e#11323#12679#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/svm_struct_learn.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1117">
-          <caret line="254" selection-start-line="254" selection-end-line="254" />
+        <state relative-caret-position="-217">
+          <caret line="238" column="16" selection-start-line="238" selection-start-column="16" selection-end-line="238" selection-end-column="16" />
           <folding>
             <element signature="e#1408#1437#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="32" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="32" />
         </state>
       </provider>
     </entry>
