@@ -191,8 +191,8 @@ LABEL       classify_struct_example(PATTERN x, STRUCTMODEL *model,
 
     double score;
     int *bbx = new int[2];
-    for(int hi = 1; hi + bh <= h; hi+= 1){
-        for(int wi = 1; wi + bw <= w; wi+=1){
+    for(int hi = 1; hi + bh - 1 <= h; hi+= 1){
+        for(int wi = 1; wi + bw - 1 <= w; wi+=1){
             bbx[0]=wi;
             bbx[1]=hi;
             DOC doc;
@@ -287,8 +287,8 @@ LABEL       find_most_violated_constraint_marginrescaling(PATTERN x, LABEL y,
 
     double score = 0;
     int *bbx = new int[2];
-    for(int hi = 1; hi + bh <= h; hi+= 10){
-        for(int wi = 1; wi + bw <= w; wi+=10){
+    for(int hi = 1; hi + bh-1 <= h; hi+= 10){
+        for(int wi = 1; wi + bw-1 <= w; wi+=10){
             bbx[0]=wi;
             bbx[1]=hi;
             DOC doc;
