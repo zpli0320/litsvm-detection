@@ -30,6 +30,7 @@ using std::bitset;
 
 #define MAX(x,y)      ((x) < (y) ? (y) : (x))
 #define MIN(x,y)      ((x) > (y) ? (y) : (x))
+#define feature_step  1
 
 void        svm_struct_learn_api_init(int argc, char* argv[])
 {
@@ -104,14 +105,14 @@ void  read_instance_struct(char *line, PATTERN &x, LABEL &y) {
     y.y[1]=read_num<int>(line, pos);
 
     PWORD *word = new PWORD[1];
-    word->col_num = read_num<int>(line, pos);
     word->row_num = read_num<int>(line, pos);
+    word->col_num = read_num<int>(line, pos);
 
     long total = 0;
     for(int i = 0; i<word->row_num; i++){
         vector<float> val;
         for(int j = 0; j<word->col_num; j++){
-            val.push_back(read_num<float>(line,pos));
+            val.push_back(read_num<float>(line,pos)/255);
             total++;
         }
         word->val.push_back(val);
@@ -140,11 +141,12 @@ void        init_struct_model(SAMPLE sample, STRUCTMODEL *sm,
     for (int i = 0; i < sample.n; i++) {
         PWORD *pword = sample.examples[i].x.pword;
         if (bw > pword->col_num) bw = pword->col_num;
-        if (bh > pword->row_num) bh = pword->row_num;
+        if (bh > pword->row_num) bh = pword
+->row_num;
     }
     sm->bw = bw / 2;
     sm->bh = bh / 2;
-    sm->sizePsi = sm->bw * sm->bh;
+    sm->sizePsi = sm->bw * sm->bh / feature_step;
     sparm->bw = sm->bw;
     sparm->bh = sm->bh;
     sm->w = (double *) malloc(sizeof(double) * sm->sizePsi);
@@ -353,9 +355,9 @@ SVECTOR     *psi(PATTERN x, LABEL L, STRUCTMODEL *model,
     WORD *words = fvec->words;
     for(int i = 0; i< model->sizePsi; i++)
         words[i].wnum = i +1;
-    for(int i =0; i < bh; i++)
+    for(int i =0; i*feature_step < bh; i++)
         for(int j = 0; j < bw; j++)
-            words[(i)*bw+j].weight = x.pword ->val[by-1+i][bx-1+j];
+            words[(i)*bw+j].weight = x.pword ->val[by-1+i*feature_step][bx-1+j];
     words[model->sizePsi].wnum = 0;
     words[model->sizePsi].weight = 0.0;
 

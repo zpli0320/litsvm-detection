@@ -2,8 +2,8 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="svmlabel" targetName="svm-label-predict" />
-      <config projectName="svmlabel" targetName="svm-label-train" />
+      <config projectName="svmlabel" targetName="svm-detect-predict" />
+      <config projectName="svmlabel" targetName="svm-detect-train" />
       <config projectName="svmlabel" targetName="svmlabel_lib" />
     </generated>
   </component>
@@ -14,8 +14,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3cae3ea-5e9d-42c3-aa6a-99b151aca87f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svm_struct_api.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/svm_struct_api.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svm_struct_learn.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/svm_struct_learn.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,8 +33,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/svm_struct_learn.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-217">
-              <caret line="238" column="16" selection-start-line="238" selection-start-column="16" selection-end-line="238" selection-end-column="16" />
+            <state relative-caret-position="341">
+              <caret line="144" selection-start-line="144" selection-end-line="144" />
               <folding>
                 <element signature="e#1408#1437#0" expanded="true" />
               </folding>
@@ -40,13 +43,40 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/svm_struct_api.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="196" column="22" selection-start-line="196" selection-start-column="22" selection-end-line="196" selection-end-column="22" />
+            <state relative-caret-position="190">
+              <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
               <folding>
                 <element signature="e#1334#1352#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file:///usr/src/debug/glibc-2.17-c758a686/nptl/sysdeps/unix/sysv/linux/raise.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="972">
+              <caret line="55" selection-start-line="55" selection-end-line="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/svm_common.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="179">
+              <caret line="224" selection-start-line="224" selection-end-line="224" />
             </state>
           </provider>
         </entry>
@@ -55,7 +85,7 @@
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="288">
-              <caret line="16" column="32" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="32" />
+              <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -63,15 +93,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/svm_struct_classify.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="67" column="33" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="33" />
+            <state relative-caret-position="207">
+              <caret line="67" column="49" selection-start-line="67" selection-start-column="49" selection-end-line="67" selection-end-column="49" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/cowdata_c_10">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -87,18 +112,20 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/svm_struct_main.cpp">
+        <entry file="file://$PROJECT_DIR$/include/svm_struct_api_types.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="87" selection-start-line="87" selection-end-line="87" />
+            <state relative-caret-position="612">
+              <caret line="48" column="33" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/svm_struct_learn_custom.cpp">
+        <entry file="file://$PROJECT_DIR$/src/svm_struct_main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-50" />
+            <state relative-caret-position="-1332">
+              <caret line="87" selection-start-line="87" selection-end-line="87" />
+            </state>
           </provider>
         </entry>
       </file>
@@ -110,6 +137,7 @@
       <find>sizePsi</find>
       <find>num_features</find>
       <find>numIt</find>
+      <find>USE_FYCACHE</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -119,12 +147,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/include/svm_struct_api_types.h" />
         <option value="$PROJECT_DIR$/include/svm_struct_api.h" />
-        <option value="$PROJECT_DIR$/src/svm_struct_learn.cpp" />
-        <option value="$PROJECT_DIR$/src/svm_struct_api.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/include/svm_struct_api_types.h" />
+        <option value="$PROJECT_DIR$/src/svm_struct_api.cpp" />
+        <option value="$PROJECT_DIR$/src/svm_struct_learn.cpp" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -146,26 +174,6 @@
             <path>
               <item name="svmlabel" type="b2602c69:ProjectViewProjectNode" />
               <item name="litsvm-detection" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="svmlabel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="litsvm-detection" type="462c0819:PsiDirectoryNode" />
-              <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="svmlabel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="litsvm-detection" type="462c0819:PsiDirectoryNode" />
-              <item name="dataset" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="svmlabel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="litsvm-detection" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="svmlabel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="litsvm-detection" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -199,7 +207,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.svm-label-train">
+  <component name="RunManager" selected="Application.svm-detect-train">
+    <configuration name="svm-detect-predict" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../dataset/cardata ../model/cardata_c10" PASS_PARENT_ENVS_2="true" PROJECT_NAME="svmlabel" TARGET_NAME="svm-detect-predict" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="svmlabel" RUN_TARGET_NAME="svm-detect-predict">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="svm-detect-train" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-c 10 -e 0.1 -w 0 -o 2 -v 1 ../dataset/cardata ../model/cardata_c10" PASS_PARENT_ENVS_2="true" PROJECT_NAME="svmlabel" TARGET_NAME="svm-detect-train" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="svmlabel" RUN_TARGET_NAME="svm-detect-train">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="svm-label-predict" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../dataset/cowdata ../model/cow_data_c_10" PASS_PARENT_ENVS_2="true" PROJECT_NAME="svmlabel" TARGET_NAME="svm-label-predict" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="svmlabel" RUN_TARGET_NAME="svm-label-predict">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -218,6 +236,8 @@
     <list>
       <item itemvalue="Application.svm-label-predict" />
       <item itemvalue="Application.svm-label-train" />
+      <item itemvalue="Application.svm-detect-predict" />
+      <item itemvalue="Application.svm-detect-train" />
       <item itemvalue="Application.svmlabel_lib" />
     </list>
   </component>
@@ -246,11 +266,18 @@
       <option name="project" value="LOCAL" />
       <updated>1549797066574</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="modify CMakeLists.txt">
+      <created>1549797281278</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1549797281278</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72834000" />
+    <option name="totallyTimeSpent" value="97861000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -263,7 +290,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1017" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2657082" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -271,13 +297,13 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946752" weight="0.32936078" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49893504" visible="true" weight="0.3618635" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49893504" weight="0.3618635" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32827735" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="CMake" order="9" weight="0.32827735" />
+      <window_info anchor="bottom" id="CMake" order="9" visible="true" weight="0.32827735" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32936078" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50106496" side_tool="true" weight="0.39869988" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32827735" />
@@ -332,7 +358,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix bug when psi_detect" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bug when psi_detect" />
+    <MESSAGE value="modify CMakeLists.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="modify CMakeLists.txt" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -448,29 +475,8 @@
         <state relative-caret-position="-258" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/src/debug/glibc-2.17-c758a686/nptl/sysdeps/unix/sysv/linux/raise.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/svm_struct_learn.h">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/svm_struct_api_types.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="116" column="9" selection-start-line="116" selection-start-column="9" selection-end-line="116" selection-end-column="9" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/include/svm_struct_common.h">
       <provider selected="true" editor-type-id="text-editor">
@@ -496,13 +502,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/svm_common.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1719">
-          <caret line="802" selection-start-line="802" selection-end-line="802" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dataset/cowdata">
       <provider selected="true" editor-type-id="LargeFileEditor">
         <state relative-caret-position="169">
@@ -525,24 +524,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/svm_struct_main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="87" selection-start-line="87" selection-end-line="87" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/src/debug/glibc-2.17-c758a686/csu/libc-start.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="273" selection-start-line="273" selection-end-line="273" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/svm_struct_classify.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="67" column="33" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -563,10 +548,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/svm_struct_classify.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="67" column="49" selection-start-line="67" selection-start-column="49" selection-end-line="67" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/svm_struct_main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1332">
+          <caret line="87" selection-start-line="87" selection-end-line="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/svm_struct_api_types.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="48" column="33" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/svm_common.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="224" selection-start-line="224" selection-end-line="224" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/src/debug/glibc-2.17-c758a686/nptl/sysdeps/unix/sysv/linux/raise.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="972">
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/svm_struct_api.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="196" column="22" selection-start-line="196" selection-start-column="22" selection-end-line="196" selection-end-column="22" />
+        <state relative-caret-position="190">
+          <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
           <folding>
             <element signature="e#1334#1352#0" expanded="true" />
           </folding>
@@ -575,18 +595,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/svm_struct_learn.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-217">
-          <caret line="238" column="16" selection-start-line="238" selection-start-column="16" selection-end-line="238" selection-end-column="16" />
+        <state relative-caret-position="341">
+          <caret line="144" selection-start-line="144" selection-end-line="144" />
           <folding>
             <element signature="e#1408#1437#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
-          <caret line="16" column="32" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="32" />
+          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
         </state>
       </provider>
     </entry>
