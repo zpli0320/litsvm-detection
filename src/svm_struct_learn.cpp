@@ -130,7 +130,7 @@ void svm_learn_struct(SAMPLE sample, STRUCT_LEARN_PARM *sparm,
   sm->w=svmModel->lin_weights; /* short cut to weight vector */
 
   /* create a cache of the feature vectors for the correct labels */
-  if(false) {
+  if(USE_FYCACHE) {
     fycache=(SVECTOR **)my_malloc(n*sizeof(SVECTOR *));
     for(i=0;i<n;i++) {
       fy=psi(ex[i].x,ex[i].y,sm,sparm);
